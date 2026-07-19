@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Заказать мягкие окна SoftWindows: телефон 8 999 939-52-85, WhatsApp, бесплатный замер в Егорьевске и области.">
+<title>Контакты — SoftWindows</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="admin-bar" id="adminBar">
+    <span>🔐 Админ</span>
+    <button class="abtn" onclick="openProductModal()">+ Товар</button>
+    <button class="abtn" onclick="openGalleryModal()">+ Фото</button>
+    <button class="abtn green" onclick="editAllData()">📝 Всё</button>
+    <button class="abtn" onclick="exportData()">💾 Экспорт</button>
+    <button class="abtn" onclick="importData()">📂 Импорт</button>
+    <button class="abtn red" onclick="adminLogout()">Выход</button>
+</div>
+<nav class="nav" id="navbar">
+    <div class="nav-logo" onclick="if(!isAdmin)adminLogin()"><span class="logo-icon">🪟</span> SoftWindows</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Главная</a></li>
+        <li><a href="catalog.html" data-page="catalog">Каталог</a></li>
+        <li><a href="gallery.html" data-page="gallery">Галерея</a></li>
+        <li><a href="about.html" data-page="about">О нас</a></li>
+        <li><a href="tel:+79999395285" class="nav-phone">📞 8 999 939-52-85</a></li>
+        <li><a href="contact.html" data-page="contact" class="nav-cta active">Заказать</a></li>
+        <li><button class="cart-icon" onclick="openCart()">🛒<span class="cart-count" id="cartCount">0</span></button></li>
+    </ul>
+    <button class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<main>
+    <section class="section" style="padding-top:80px">
+        <div class="section-head">
+            <p class="section-tag">Контакты</p>
+            <h2 class="section-title">Закажите мягкие окна</h2>
+            <p class="section-sub">Бесплатный замер с образцами по Егорьевску и области</p>
+        </div>
+        <div style="max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:1rem">
+            <a href="tel:+79999395285" style="display:flex;align-items:center;gap:1rem;background:var(--accent);color:#fff;padding:1.2rem 1.5rem;border-radius:var(--radius);font-size:1.1rem;font-weight:600;transition:var(--transition)">
+                <span style="font-size:2rem">📞</span>
+                <div><div style="font-size:0.75rem;opacity:0.8;font-weight:400">Позвонить</div>8 999 939-52-85</div>
+            </a>
+            <a href="https://wa.me/79999395285" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:1rem;background:#25D366;color:#fff;padding:1.2rem 1.5rem;border-radius:var(--radius);font-size:1.1rem;font-weight:600;transition:var(--transition)">
+                <span style="font-size:2rem">💬</span>
+                <div><div style="font-size:0.75rem;opacity:0.8;font-weight:400">Написать</div>WhatsApp</div>
+            </a>
+            <a href="https://t.me/softwindows" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:1rem;background:#0088cc;color:#fff;padding:1.2rem 1.5rem;border-radius:var(--radius);font-size:1.1rem;font-weight:600;transition:var(--transition)">
+                <span style="font-size:2rem">✈️</span>
+                <div><div style="font-size:0.75rem;opacity:0.8;font-weight:400">Написать</div>Telegram</div>
+            </a>
+        </div>
+    </section>
+    <section class="section alt">
+        <div class="section-head">
+            <p class="section-tag">Как заказать</p>
+            <h2 class="section-title">3 простых шага</h2>
+        </div>
+        <div class="process-grid" style="max-width:var(--max-width);margin:0 auto">
+            <div class="process-step"><div class="process-num">1</div><h4>Звонок</h4><p>Звоните 8 999 939-52-85 или пишите в WhatsApp. Консультируем бесплатно.</p></div>
+            <div class="process-step"><div class="process-num">2</div><h4>Замер</h4><p>Приезжаем с образцами в удобное время. Точный расчёт стоимости.</p></div>
+            <div class="process-step"><div class="process-num">3</div><h4>Монтаж</h4><p>Изготавливаем за 3–5 дней. Устанавливаем за 2–3 часа. Гарантия 3 года.</p></div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="section-head">
+            <p class="section-tag">География</p>
+            <h2 class="section-title">Где мы работаем</h2>
+            <p class="section-sub">Егорьевск и города в радиусе 60 км</p>
+        </div>
+        <div style="max-width:500px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;font-size:0.9rem">
+            <div style="padding:0.6rem 1rem;background:var(--bg-alt);border-radius:8px">📍 Егорьевск</div>
+            <div style="padding:0.6rem 1rem;background:var(--bg-alt);border-radius:8px">📍 Коломна</div>
+            <div style="padding:0.6rem 1rem;background:var(--bg-alt);border-radius:8px">📍 Воскресенск</div>
+            <div style="padding:0.6rem 1rem;background:var(--bg-alt);border-radius:8px">📍 Шатура</div>
+            <div style="padding:0.6rem 1rem;background:var(--bg-alt);border-radius:8px">📍 Луховицы</div>
+            <div style="padding:0.6rem 1rem;background:var(--bg-alt);border-radius:8px">📍 Озёры</div>
+        </div>
+        <p style="text-align:center;margin-top:1rem;color:var(--text-secondary);font-size:0.85rem">Выезд за пределы 60 км — по договорённости</p>
+    </section>
+    <section class="section alt" style="text-align:center">
+        <h2 class="section-title" style="margin-bottom:0.8rem">Готовы сделать заказ?</h2>
+        <p class="section-sub" style="margin-bottom:2rem">Звоните прямо сейчас — рассчитаем стоимость за 5 минут</p>
+        <a href="tel:+79999395285" class="btn btn-accent" style="font-size:1rem;padding:0.9rem 2rem">📞 8 999 939-52-85</a>
+        <a href="https://wa.me/79999395285" target="_blank" rel="noopener" class="btn btn-outline" style="margin-left:0.8rem">💬 WhatsApp</a>
+    </section>
+</main>
+<footer>
+    <div class="footer-logo">🪟 SoftWindows</div>
+    <ul class="footer-links">
+        <li><a href="index.html">Главная</a></li><li><a href="catalog.html">Каталог</a></li>
+        <li><a href="gallery.html">Галерея</a></li><li><a href="about.html">О нас</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 SoftWindows. Егорьевск и область. 📞 8 999 939-52-85</p>
+</footer>
+<div class="cart-modal" id="cartModal" onclick="closeCartOutside(event)">
+    <div class="cart-panel" onclick="event.stopPropagation()">
+        <div class="cart-header"><h3>🛒 Корзина</h3><button class="cart-close" onclick="closeCart()">✕</button></div>
+        <div id="cartItems"></div>
+        <div class="cart-total"><span>Итого:</span><span class="cart-total-price" id="cartTotal">0 ₽</span></div>
+        <div class="cart-actions">
+            <a href="contact.html" class="btn btn-accent" style="flex:1;justify-content:center" onclick="closeCart()">Оформить</a>
+            <button class="btn btn-outline" style="flex:1;justify-content:center" onclick="clearCart()">Очистить</button>
+        </div>
+    </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/components.js"></script>
+</body>
+</html>
